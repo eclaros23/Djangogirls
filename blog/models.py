@@ -2,8 +2,11 @@ from django.conf import settings
 from django.db import models
 from django.utils import timezone
 
+class Image(models.Model):
+  image = models.ImageField()
+  
 class Post(models.Model):
-  image = models.ImageField(blank=True, null=True)
+  images = models.ManyToManyField(Image)
   author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
   title = models.CharField(max_length=200)
   text = models.TextField()

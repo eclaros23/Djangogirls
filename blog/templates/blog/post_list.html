@@ -2,9 +2,9 @@
 {% block content %}
       {% for post in posts %}
               <article class="post">
-                  <time class="09-28-2022"
-                      {{ post.published_date }}
-                  </time>
+                  <p class="09-28-2022"
+                      {{ post.published_date }} abc
+                  </p>
                   <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
                   <p>{{ post.text|linebreaksbr }}</p>
               </article>

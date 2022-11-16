@@ -16,6 +16,8 @@
       {% endif %}
       <h2>{{ post.title }}</h2>
       <p>{{ post.text|linebreaksbr }}</p>
-      <img src="{{ post.image.url }}" />
+      {% for image in post.images.all %}
+      <img class = "postimage" src="{{ image.image.url }}" /> 
+      {% endfor %}
     </article>
 {% endblock %}
