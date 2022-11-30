@@ -57,6 +57,14 @@ h4 {
   background-color: #d5eace;
   margin-bottom: 70px;
   border: 2px solid #618d5e;
+  width: 500px;
+  height: 85%;
+}
+
+.post-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
 }
 
 .post_detail {
@@ -65,8 +73,9 @@ h4 {
 }
 
 .postimage {
-  width: 200px;
-  height: 200px;
+  width: 370px;
+  height: 300px;
+  border: 2px solid #618d5e;
 }
 
 .post h2 a,
