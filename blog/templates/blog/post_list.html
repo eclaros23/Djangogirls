@@ -3,7 +3,7 @@
       {% for post in posts %}
               <article class="post"> 
                  <img class = "postimage" src="{{ post.images.all.0.image.url }}" /> 
-                  <p class="09-28-2022"
+                  <p 
                       {{ post.published_date }} abc
                   </p>
                   <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
