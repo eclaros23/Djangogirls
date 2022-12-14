@@ -1,8 +1,18 @@
+h1 a, h2 a {
+    color: #C25100;
+    font-family: 'Papyrus';
+}
+
+body {
+    padding-left: 15px;
+}
+
 .page-header {
-  background-color: #CF86A9;
+  background-color: #87c075;
   margin-top: 0;
   margin-bottom: 40px;
   padding: 20px 20px 20px 40px;
+  border: 3px solid #547c52;
 }
 
 .page-header h1,
@@ -18,7 +28,7 @@ h1,
 h2,
 h3,
 h4 {
-    font-family: 'Lobster', cursive;
+    font-family: 'Papyrus', cursive;
 }
 
 .date {
@@ -44,7 +54,28 @@ h4 {
 }
 
 .post {
+  background-color: #d5eace;
   margin-bottom: 70px;
+  border: 2px solid #618d5e;
+  width: 500px;
+  height: 85%;
+}
+
+.post-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
+}
+
+.post_detail {
+  background-color: #d5eace;
+  border: 2px solid #618d5e;
+}
+
+.postimage {
+  width: 370px;
+  height: 300px;
+  border: 2px solid #618d5e;
 }
 
 .post h2 a,
