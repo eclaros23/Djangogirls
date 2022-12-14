@@ -4,7 +4,7 @@
               <article class="post"> 
                  <img class = "postimage" src="{{ post.images.all.0.image.url }}" /> 
                   <p>
-                      {{ post.published_date }} abc
+                      {{ post.published_date }} 
                   </p>
                   <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
                   <p>{{ post.text|linebreaksbr }}</p>
