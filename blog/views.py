@@ -4,6 +4,7 @@ from django.utils import timezone
 from .models import Post
 from django.shortcuts import render, get_object_or_404
 from .forms import PostForm
+from django.http import Http404
 
 # Create your views here.
 def post_list(request):
@@ -11,10 +12,13 @@ def post_list(request):
     return render(request, 'blog/post_list.html', {'posts': posts})
 
 def post_detail(request, pk):
-    post = get_object_or_404(Post, pk=pk)
+    published_posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    post = get_object_or_404(published_posts, pk=pk)
     return render(request, 'blog/post_detail.html', {'post': post})
 
 def post_new(request):
+    if not request.user.is_authenticated:
+       raise Http404("Not Found!!!")
     if request.method == "POST":
         form = PostForm(request.POST)
         if form.is_valid():
@@ -28,6 +32,9 @@ def post_new(request):
     return render(request, 'blog/post_edit.html', {'form': form})
 
 def post_edit(request, pk):
+    """If user is not logged in then they should not edit posts"""
+    if not request.user.is_authenticated:
+        raise Http404("Not Found!!!")
     post = get_object_or_404(Post, pk=pk)
     if request.method == "POST":
         form = PostForm(request.POST, instance=post)
