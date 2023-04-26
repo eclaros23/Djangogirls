@@ -1,13 +1,19 @@
 {% extends 'blog/base.html' %}
 {% block content %}
+  <div id='fa' style='height:100%; width:100%;'>
+  </div>
+      <div class="col post-container"> 
       {% for post in posts %}
               <article class="post"> 
                  <img class = "postimage" src="{{ post.images.all.0.image.url }}" /> 
                   <p>
                       {{ post.published_date }} 
                   </p>
-                  <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+                  <h2><a class = "posttitle" href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
                   <p>{{ post.text|linebreaksbr }}</p>
               </article>
           {% endfor %}
+          <button id = "thebutton">Something</button> 
+          <button id = "emojibutton">Emoji Button</button>
+      </div>
 {% endblock %}
