@@ -15,16 +15,17 @@
                     {% include './icons/file-earmark-plus.svg' %}
                 </a>
               {% endif %}
-                <h1><a href="/">Emily's Blog</a></h1>
+                <h1><a id = "titlelink" href="/">Emily's Blog</a></h1>
             </div>
         </header>
         <main class="container">
             <div class="row">
-                <div class="col post-container"> 
+          
                     {% block content %}
                     {% endblock %}
-                </div>
+         
             </div>
         </main>
+        <script type="text/javascript" src="{% static 'js/main.js' %}"></script> <!-- loading a script for main.js -->
     </body>
 </html>
